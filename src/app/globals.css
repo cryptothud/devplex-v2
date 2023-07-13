@@ -17,5 +17,41 @@
 }
 
 body {
-  background: #FAFAFA;
+  background: #fafafa;
+}
+
+.light .main-text-color {
+  color: #1D1F20;
+}
+
+.dark .main-text-color {
+  color: #fafafa;
+}
+
+.light .main-shadow {
+  box-shadow: 0 4px 30px #1D1F2020;
+}
+
+.dark .main-shadow {
+  box-shadow: 0 4px 30px #fafafa10;
+}
+
+.light .main-button {
+  background: #fafafa;
+}
+
+.light .main-button:hover {
+  background: #f7f7f7;
+}
+
+.dark .main-button {
+  background: #070707;
+}
+
+.dark .main-button:hover {
+  background: #131313;
+}
+
+.dark .background {
+  filter: invert(1);
 }
