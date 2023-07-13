@@ -12,6 +12,8 @@ export const Navbar = () => {
     const [darkMode, setDarkMode] = useState(false)
     const isDarkMode = useMediaQuery({ query: '(prefers-color-scheme: dark)' })
 
+    
+
     useEffect(() => {
         const doc = document.documentElement
         if (isDarkMode === true) {

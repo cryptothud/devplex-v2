@@ -16,8 +16,12 @@
   }
 }
 
-body {
+.light {
   background: #fafafa;
+}
+
+.dark {
+  color: #0b0b0b;
 }
 
 .light .main-text-color {
