@@ -21,9 +21,7 @@ export const metadata: Metadata = {
     title: 'Devplex',
     description: 'We help bring your vision to life and onto the blockchain.',
     images: 'https://i.ibb.co/kmKzh3q/New-Project-18.png'
-  },
-
-  colorScheme: "light"
+  }
 }
 
 export default function RootLayout({
