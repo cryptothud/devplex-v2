@@ -38,7 +38,7 @@ const Arrows = () => {
       const scrollY = window.scrollY || window.pageYOffset;
 
       // Check if the user is at the top of the page (you can adjust the threshold)
-      setIsAtTop(scrollY < 70);
+      setIsAtTop(scrollY < 100);
     };
 
     const appHeight = async () => {
@@ -63,14 +63,11 @@ const Arrows = () => {
   }, []);
 
   return (
-    <div className={`absolute bottom-4 w-full flex justify-center duration-300 ${isAtTop ? "rotate-0" : "rotate-180"}`}>
+    <div className={`absolute bottom-4 w-full flex justify-center duration-300 ${isAtTop ? "opacity-100 cursor-pointer" : "opacity-0 pointer-events-none"}`}>
       <div className="arrow cursor-pointer" onClick={() => window.scrollTo(isAtTop ? {
         top: 2000,
         behavior: 'smooth'
-      } : {
-        top: 0,
-        behavior: 'smooth'
-      })}>
+      } : null)}>
         <svg width="5" height="4" viewBox="0 0 5 4" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M2.5 0L4.66506 3.75H0.334936L2.5 0Z" fill="#635BFF" />
         </svg>
