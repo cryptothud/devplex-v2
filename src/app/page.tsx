@@ -42,7 +42,6 @@ const Arrows = () => {
     };
 
     const appHeight = async () => {
-      console.log("doing this")
       try {
         const doc = document.documentElement
         doc.style.setProperty(`--app-height`, `${window.innerHeight}px`)
@@ -84,7 +83,6 @@ const Arrows = () => {
 }
 
 const Projects = () => {
-
   return (
     <div className="projects-wrapper pt-20 pb-24 sm:pb-40">
       <div className="w-screen overflow-hidden relative">
