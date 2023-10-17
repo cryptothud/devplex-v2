@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center px-4 sm:px-24 relative z-[1]">
-      <div className="flex flex-col gap-4 items-center justify-center h-screen min-h-screen relative">
+      <div className="flex flex-col gap-4 items-center justify-center h-screen relative">
         <h1 className="text-4xl sm:text-6xl main-text-color font-medium text-center"><span className="text-[#E1AE2A]">Your</span> Vision. <span className="text-[#658EBE]">Our</span> Code.</h1>
         <h2 className="text-base main-text-color opacity-50 text-center tracking-wide">We help bring your vision to life and onto the blockchain.</h2>
         <a href="mailto:contact@devplex.org">
@@ -42,6 +42,7 @@ const Arrows = () => {
     };
 
     const appHeight = async () => {
+      console.log("doing this")
       try {
         const doc = document.documentElement
         doc.style.setProperty(`--app-height`, `${window.innerHeight}px`)
@@ -87,32 +88,13 @@ const Arrows = () => {
 
 const Projects = () => {
 
-  const projectHeightDesktop = 400
-  const projectHeightMobile = 400
-
-  const projectWidthDesktop = 300
-  const projectWidthMobile = 200
-
   return (
-    <div className="projects-wrapper pt-20 pb-20 sm:pb-40">
+    <div className="projects-wrapper pt-20 pb-24 sm:pb-40">
       <div className="w-screen overflow-hidden relative">
         <div className="left-fade" />
         <div
           className="animate-projects flex gap-4 py-3"
         >
-          <style>
-            {`
-              :root {
-                --projects: ${(projects.length * -projectWidthMobile) - (16 * projects.length - 1)}px;
-              }
-
-              @media (min-width: 800px) {
-                :root {
-                  --projects: ${(projects.length * -projectWidthDesktop) - (16 * projects.length - 1)}px;
-                }
-              }
-            `}
-          </style>
           <Swiper
             speed={7500}
             slidesPerView={"auto"}
@@ -134,7 +116,7 @@ const Projects = () => {
                   className={`project flex gap-3 flex-col justify-start w-[200px] min-w-[200px] sm:w-[300px] sm:min-w-[300px] h-[300px] sm:h-[360px] overflow-hidden p-3 sm:p-6 rounded-3xl hover:translate-y-[-5px] duration-200`}
                 >
                   <Zoom zoomMargin={30}>
-                    <Image alt={project.title} src={project.image} width="1600" height="900" className="rounded-2xl h-full object-cover w-full" />
+                    <Image alt={project.title} src={project.image} width="1600" height="900" className="rounded-2xl h-full object-cover w-full" quality={100} placeholder="blur" />
                   </Zoom>
                   <h1 className="text-base sm:text-xl main-text-color text-center tracking-wide">{project.title}</h1>
                   <h1 className="text-xs sm:text-sm main-text-color text-center tracking-wide">{project.description}</h1>

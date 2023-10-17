@@ -35,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark" style={{ "--app-height": "100vh" } as any}>
       <body className={outfit.className}>
         <Image src={"/images/background.svg"} width={1920} height={1080} alt="Background" className="background absolute min-w-[100vw] min-h-[100vh] object-cover object-center z-[0] pointer-events-none" />
         <Navbar />
