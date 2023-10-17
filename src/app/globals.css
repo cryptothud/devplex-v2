@@ -21,6 +21,14 @@ body {
   overflow-x: hidden;
 }
 
+.h-screen {
+  height: var(--app-height);
+}
+
+.max-h-screen {
+  max-height: var(--app-height);
+}
+
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -246,7 +254,8 @@ body {
     max-height: 175px;
   }
 
-  .left-fade, .right-fade {
+  .left-fade,
+  .right-fade {
     width: 100px;
   }
 }

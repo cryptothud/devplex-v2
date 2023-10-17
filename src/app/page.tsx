@@ -41,10 +41,23 @@ const Arrows = () => {
       setIsAtTop(scrollY < 70);
     };
 
+    const appHeight = async () => {
+      try {
+        const doc = document.documentElement
+        doc.style.setProperty(`--app-height`, `${window.innerHeight}px`)
+      } catch (e) {
+        //don't need to do anything here. only to prevent random bug
+      }
+    }
+
+    appHeight()
+
+    window.addEventListener('resize', appHeight)
     window.addEventListener('scroll', handleScroll);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', appHeight)
     };
   }, []);
 
