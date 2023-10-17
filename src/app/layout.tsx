@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={outfit.className}>
-        <Image src={"/images/background.svg"} width={1920} height={1080} alt="Background" className="background fixed min-w-[100vw] min-h-[100vh] object-cover object-center z-[0] pointer-events-none" />
+        <Image src={"/images/background.svg"} width={1920} height={1080} alt="Background" className="background absolute min-w-[100vw] min-h-[100vh] object-cover object-center z-[0] pointer-events-none" />
         <Navbar />
         {children}
       </body>

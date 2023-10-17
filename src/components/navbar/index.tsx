@@ -9,10 +9,10 @@ import Head from 'next/head'
 
 export const Navbar = () => {
 
-    const [darkMode, setDarkMode] = useState(false)
+    const [darkMode, setDarkMode] = useState(null)
     const isDarkMode = useMediaQuery({ query: '(prefers-color-scheme: dark)' })
 
-    
+
 
     useEffect(() => {
         const doc = document.documentElement
@@ -46,7 +46,7 @@ export const Navbar = () => {
             <Head>
                 <meta name="theme-color" content={darkMode ? "#1D1F20" : "#fafafa"} />
             </Head>
-            <div className="fixed w-screen top-0 left-0 py-4 px-4 sm:px-8 z-[2] flex justify-between items-center">
+            <div className={`${darkMode !== null ? darkMode ? "bg-[linear-gradient(180deg,#0d0d0d,transparent)]" : "bg-[linear-gradient(180deg,#fafafa,transparent)]" : ""} fixed w-screen top-0 left-0 py-4 px-4 sm:px-8 z-[2] flex justify-between items-center`}>
                 <div className="flex justify-center items-center gap-2 select-none pointer-events-none">
                     <Image src={darkMode ? "/images/devplex-light.svg" : "/images/devplex-color.svg"} alt="Logo" width={70} height={70} className="w-[50px] sm:w-[70px] h-[50px] sm:h-[70px]" />
                     <h1 className="main-text-color text-3xl sm:text-4xl font-medium">Devplex</h1>
