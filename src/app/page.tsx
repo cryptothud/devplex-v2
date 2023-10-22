@@ -111,7 +111,7 @@ const Projects = () => {
                   className={`project flex gap-3 flex-col justify-start w-[200px] min-w-[200px] sm:w-[300px] sm:min-w-[300px] h-[300px] sm:h-[360px] overflow-hidden p-3 sm:p-6 rounded-3xl hover:translate-y-[-5px] duration-200`}
                 >
                   <Zoom zoomMargin={30}>
-                    <Image alt={project.title} src={project.image} width="1600" height="900" className="rounded-2xl h-full object-cover w-full" quality={100} placeholder="blur" />
+                    <Image alt={project.title} src={project.image} width="800" height="400" className="rounded-2xl h-full object-cover w-full" quality={100} />
                   </Zoom>
                   <h1 className="text-base sm:text-xl main-text-color text-center tracking-wide">{project.title}</h1>
                   <h1 className="text-xs sm:text-sm main-text-color text-center tracking-wide">{project.description}</h1>
