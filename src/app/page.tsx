@@ -88,7 +88,7 @@ const Projects = () => {
       <div className="w-screen overflow-hidden relative">
         <div className="left-fade" />
         <div
-          className="animate-projects flex gap-4 py-3"
+          className="animate-projects flex gap-4 py-3 pointer-events-none sm:pointer-events-auto"
         >
           <Swiper
             speed={7500}
@@ -108,10 +108,19 @@ const Projects = () => {
             {projects.map((project, index) => (
               <SwiperSlide key={project.title + index}>
                 <div
-                  className={`project flex gap-3 flex-col justify-start w-[200px] min-w-[200px] sm:w-[300px] sm:min-w-[300px] h-[300px] sm:h-[360px] overflow-hidden p-3 sm:p-6 rounded-3xl hover:translate-y-[-5px] duration-200`}
+                  className={`project flex gap-3 flex-col justify-start w-[200px] min-w-[200px] sm:w-[300px] sm:min-w-[300px] h-[300px] sm:h-[360px] overflow-hidden p-3 sm:p-6 rounded-3xl sm:hover:translate-y-[-5px] duration-200`}
                 >
                   <Zoom zoomMargin={30}>
-                    <Image alt={project.title} src={project.image} width="800" height="400" className="rounded-2xl h-full object-cover w-full" quality={100} />
+                    <Image
+                      alt={project.title}
+                      src={project.image}
+                      width="800"
+                      height="400"
+                      className="rounded-2xl h-full object-cover w-full"
+                      quality={100}
+                      layout="responsive"
+                      sizes="(min-width: 768px) 800px, 400px"
+                    />
                   </Zoom>
                   <h1 className="text-base sm:text-xl main-text-color text-center tracking-wide">{project.title}</h1>
                   <h1 className="text-xs sm:text-sm main-text-color text-center tracking-wide">{project.description}</h1>
